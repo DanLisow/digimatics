@@ -1,0 +1,237 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "FiraSans";
+    font-weight: 400;
+    width: 100vw;
+    overflow-x: hidden;
+    background: #fafbfc;
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: none;
+    background: transparent;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+input {
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+ul,
+ol,
+dl {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+    &:active {
+        text-decoration: none;
+    }
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding-left: 40px;
+    &-header {
+        max-width: 1390px;
+        margin: 0 0 0 auto;
+    }
+    &-new {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding-left: 40px;
+    }
+    &-team {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding-left: 40px;
+    }
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0000ff;
+}
+
+::-webkit-resizer {
+    background-image: url("");
+    background-repeat: no-repeat;
+    width: 4px;
+    height: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+#modal,
+#modal-success,
+#modal-error,
+#modal-warning {
+    display: none;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 0.6s ease;
+}
+
+#modal {
+    max-width: 900px;
+}
+
+#modal-success,
+#modal-error {
+    max-width: 360px;
+}
+
+.modal {
+    &__body {
+        display: flex;
+    }
+    &__info {
+        padding: 36px 50px 45px 49px;
+        & h1 {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 135%;
+            color: #141515;
+            margin-bottom: 38px;
+        }
+    }
+    & .send {
+        &__form {
+            &-inputs {
+                grid-column-gap: 16px;
+                margin-bottom: 16px;
+            }
+            &-text {
+                & textarea {
+                    height: 120px;
+                }
+                & input {
+                    margin-bottom: 16px;
+                }
+            }
+            &-button {
+                & button {
+                    margin-right: 32px;
+                    & a {
+                        padding: 14px 71px;
+                    }
+                }
+            }
+        }
+    }
+    &__img {
+        &-block {
+            height: 100%;
+            position: relative;
+            & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-logo {
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            & img {
+                width: 115px;
+            }
+        }
+    }
+}
+
+.fancybox-bg,
+.fancybox-inner,
+.fancybox-outer,
+.fancybox-stage {
+    position: fixed !important;
+}
+
+.fancybox-slide--complete #modal,
+.fancybox-slide--complete #modal-success,
+.fancybox-slide--complete #modal-error,
+.fancybox-slide--complete #modal-warning {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fancybox-button {
+    padding: 0 !important;
+}
+
+.fancybox-slide--html .fancybox-close-small {
+    right: 10px !important;
+    top: 10px !important;
+}
+.fancybox-slide--html .fancybox-close-small path {
+    fill: #fff;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale")
+        grayscale(100%) invert(100%) brightness(50%);
+    /* Firefox 3.5+ */
+    -webkit-filter: grayscale(100%) invert(100%) brightness(50%);
+    /* Chrome 19+ & Safari 6+ */
+}
